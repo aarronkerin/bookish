@@ -1,0 +1,42 @@
+﻿@model Bookish.Web.Models.Borrow
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Borrow</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BorrowDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BorrowDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BorrowReturn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BorrowReturn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Borrower.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Borrower.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BorrowID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

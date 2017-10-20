@@ -1,0 +1,45 @@
+﻿@using System.Web.Configuration
+@using Bookish.Web.Controllers
+@using Bookish.Web.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Bookish</h1>
+    <p class="lead">Register books, see books available for rental and book authors.</p>
+    @using (Html.BeginForm("Index", "BookInfoes", FormMethod.Get))
+     
+
+
+
+
+
+
+    {
+    <b>Search by:</b>@Html.RadioButton("searchBy", "Author", true) <text>Author</text>
+    @Html.RadioButton("searchBy", "Book") <text>Book</text>
+    @Html.TextBox("searchString")<input type ="Submit" value="search"/>
+    }
+    <p></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Authors","Index", "Authors")</h2>
+        <p>
+            Here you can see a list of authors we currently stock books of.
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Book Library", "Index", "BookInfoes")</h2>
+        <p>Here you can see the Library of books currently available to rent</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>@Html.ActionLink("Borrowed Books", "Index", "Borrows")</h2>
+        <p>Here you can see a list of books that are currently out and when they are due back</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
